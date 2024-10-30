@@ -8,7 +8,6 @@
  *  Student ID: 133592238
  *  Date: October 29, 2024
  ********************************************************************************/
-
 import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import { Accordion, Pagination } from 'react-bootstrap';
@@ -18,9 +17,10 @@ import PageHeader from '@/components/PageHeader';
 export default function Home() {
     const [page, setPage] = useState(1);
     const [pageData, setPageData] = useState([]);
+    const API_BASE_URL = process.env.API_BASE_URL || 'https://web-422-assignment-01-xdaq.vercel.app';
 
     // Fetch movie data using SWR
-    const { data, error } = useSWR(`${process.env.API_BASE_URL}/api/movies?page=${page}&perPage=10`);
+    const { data, error } = useSWR(`${API_BASE_URL}/api/movies?page=${page}&perPage=10`);
 
     // Update pageData whenever new data is fetched
     useEffect(() => {
