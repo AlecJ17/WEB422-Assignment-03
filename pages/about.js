@@ -8,7 +8,7 @@ export async function getStaticProps() {
     const movieId = '573a139af29313caabcf0859'; // Use the provided movie ID for "Traffic in Souls"
 
     try {
-        const res = await fetch(`https://web-422-assignment-01-xdaq.vercel.app/api/movies/${movieId}`);
+        const res = await fetch(`${process.env.API_BASE_URL}/api/movies/${movieId}`);
         if (!res.ok) {
             throw new Error(`Failed to fetch movie with ID: ${movieId}`);
         }

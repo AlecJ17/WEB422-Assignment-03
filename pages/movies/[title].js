@@ -11,7 +11,7 @@ export default function Movie() {
     const { title } = router.query; // Retrieve the "title" parameter from the URL
 
     // Fetch movie data based on title
-    const { data, error } = useSWR(title ? `https://web-422-assignment-01-xdaq.vercel.app/api/movies?page=1&perPage=10&title=${title}` : null, fetcher);
+    const { data, error } = useSWR(title ? `${process.env.API_BASE_URL}/api/movies?page=1&perPage=10&title=${title}` : null, fetcher);
 
     // Handle loading and error states
     if (error) return <p>Failed to load movie.</p>;

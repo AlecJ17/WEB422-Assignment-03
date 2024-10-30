@@ -20,7 +20,7 @@ export default function Home() {
     const [pageData, setPageData] = useState([]);
 
     // Fetch movie data using SWR
-    const { data, error } = useSWR(`https://web-422-assignment-01-xdaq.vercel.app/api/movies?page=${page}&perPage=10`);
+    const { data, error } = useSWR(`${process.env.API_BASE_URL}/api/movies?page=${page}&perPage=10`);
 
     // Update pageData whenever new data is fetched
     useEffect(() => {
