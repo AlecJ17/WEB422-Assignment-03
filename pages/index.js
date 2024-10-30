@@ -7,6 +7,7 @@
  *  Name: Alec Josef Serrano
  *  Student ID: 133592238
  *  Date: October 29, 2024
+ *  Vercel Link: https://web-422-assignment-03-2rk1.vercel.app/
  ********************************************************************************/
 import { useState, useEffect } from 'react';
 import useSWR from 'swr';
